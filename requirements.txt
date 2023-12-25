@@ -1,6 +1,6 @@
 Django==4.2.6
 numpy
-opencv-python
+opencv-python-headless
 Pillow
 sqlparse
 urllib3
