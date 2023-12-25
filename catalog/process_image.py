@@ -1,4 +1,4 @@
-import cv2 as cv
+# import cv2 as cv
 import os
 
 
@@ -48,11 +48,12 @@ def process_image(image_data, binary_conversion):
 
     # load image to open to to make it binary with the set threshold
     if binary_conversion:
-        img = cv.imread(image_path)
-        img_gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-        ret, thresh = cv.threshold(img_gray, 115, 255, cv.THRESH_BINARY)
+        pass
+        # img = cv.imread(image_path)
+        # img_gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+        # ret, thresh = cv.threshold(img_gray, 115, 255, cv.THRESH_BINARY)
 
-        cv.imwrite(image_path, thresh) #save image to the same name and location 
+        # cv.imwrite(image_path, thresh) #save image to the same name and location 
 
     result = reader.readtext(image_path, detail = 0)
 
