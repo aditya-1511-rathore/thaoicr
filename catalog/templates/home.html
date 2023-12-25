@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qoala Thai ID OCR</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #2c3e50;  /* Darker background color */
+            color: #ecf0f1;  /* Light font color */
+        }
+
+        #header {
+            text-align: center;
+            padding: 20px;
+            background-color: #3498db;  /* Header background color */
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: #34495e;  /* Darker container background color */
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px; /* Add margin-top for separation from the header */
+        }
+
+        h1 {
+            color: #ecf0f1;  /* Light font color */
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #bdc3c7;  /* Lighter font color */
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 2px solid #3498db;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            color: #bdc3c7;  /* Lighter font color */
+            background-color: #2c3e50;  /* Darker background color for input */
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        p {
+            font-size: 14px;
+            color: #bdc3c7;  /* Lighter font color */
+            margin-top: 0;
+        }
+        .loading{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background: url("/ocr_images/loading.gif");
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 100;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Qoala Thai ID OCR</h1>
+    </div>
+    <div class="container">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="image">Choose a Thai ID Card Image:</label>
+            <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" required>
+            <p>Accepted formats: .jpg, .jpeg, .png | Max file size: 2MB</p>
+            <div style="margin-bottom: 20px;">
+                <input type="checkbox" name="binary" id="binary" value="True">
+                <label for="binary">Want to detect in binary conversion?</label>
+                <br>
+            </div>
+            <input type="submit" value="Submit" id="submit_btn">
+        </form>
+    </div>
+    <div class="loading">
+
+    </div>
+    <a onclick="window.location.href='/previous'" style="width: 400px; background-color: #34495e; border-radius: 12px; height: 50px; display:grid; place-items: center; margin-top: 30px; cursor: pointer;">View Previous Results</a>
+</body>
+<script>
+document.getElementById("submit_btn").addEventListener("click",()=>{
+    document.getElementsByClassName("loading")[0].style.display = "block";
+})
+</script>
+</html>

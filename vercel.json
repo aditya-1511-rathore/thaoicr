@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "locallibrary/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "2gb", "runtime": "python3.11" }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "ocr_images"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/ocr_images/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "locallibrary/wsgi.py"
+    }
+  ]
+}
