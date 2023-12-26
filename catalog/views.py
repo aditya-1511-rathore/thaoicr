@@ -73,5 +73,5 @@ def previous(request):
         if "exist" in request.GET.keys():
             return render(request, "item.html", context={"data":OCRResult.objects.get(id = request.GET["id"]),"exist":True})
 
-        return render(request, "item.html", context={"data":OCRResult.objects.get(id_number = request.GET["id"])})
+        return render(request, "item.html", context={"data":OCRResult.objects.get(id = request.GET["id"])})
     return render(request,"previous.html", context = {"data":OCRResult.objects.all()})
