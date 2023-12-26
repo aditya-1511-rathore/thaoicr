@@ -4,16 +4,4 @@ opencv-python-headless
 Pillow
 sqlparse
 urllib3
-torch
-torchvision>=0.5
-opencv-python-headless
-scipy
-numpy
-Pillow
-scikit-image
-python-bidi
-PyYAML
-Shapely
-pyclipper
-ninja
-easyocr
+pytesseract==0.3.10
