@@ -56,7 +56,7 @@
     <div class="container">
         <h1>Previous Id Scans <span><button onclick="window.location.href='/'">Home</button></span></h1>
         {%for i in data%}
-        <div class="item" onclick="window.location.href='?id={{i.id_number}}'">{{i.id_number}}</div>
+        <div class="item" onclick="window.location.href='?id={{i.id}}'">{{i.id_number}}</div>
         {%endfor%}
     </div>
 </body>
