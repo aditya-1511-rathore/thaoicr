@@ -54,12 +54,12 @@ def previous(request):
         if request.method == "POST":
             # to delete the requested ID
             if request.POST.get("type") == "delete":
-                OCRResult.objects.get(id_number = request.GET["id"]).delete()
+                OCRResult.objects.get(id = request.GET["id"]).delete()
                 return redirect("/previous")
             
             # to update the requested id
             else:
-                ocr_val = OCRResult.objects.get(id_number = request.GET["id"])
+                ocr_val = OCRResult.objects.get(id = request.GET["id"])
                 ocr_val.id_number = request.POST["id_number"]
                 ocr_val.name = request.POST["name"]
                 ocr_val.last_name = request.POST["lname"]
