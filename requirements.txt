@@ -5,3 +5,4 @@ Pillow
 sqlparse
 urllib3
 pytesseract==0.3.10
+gunicorn
