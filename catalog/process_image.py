@@ -20,13 +20,16 @@ def ocr_core(image_data):
 def get_id(inputs):
     id = None
     for i in inputs:
-        x = re.search(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]", i)
-        # print(x)
-        match = re.match(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]",i)
-        if match is not None:
-            print(match.group())
-        if x is not None:
-            id = x.group()
+        pattern = re.compile(r'[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]')
+        for match in re.findall(pattern, i):
+            return match
+        # x = re.search(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]", i)
+        # # print(x)
+        # match = re.match(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]",i)
+        # if match is not None:
+        #     print(match.group())
+        # if x is not None:
+        #     id = x.group()
         # for m in re.finditer(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]",i):
         #     print(m.start(), m.end())
 
