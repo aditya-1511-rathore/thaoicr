@@ -23,15 +23,7 @@ def get_id(inputs):
         pattern = re.compile(r'[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]')
         for match in re.findall(pattern, i):
             return match
-        # x = re.search(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]", i)
-        # # print(x)
-        # match = re.match(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]",i)
-        # if match is not None:
-        #     print(match.group())
-        # if x is not None:
-        #     id = x.group()
-        # for m in re.finditer(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]",i):
-        #     print(m.start(), m.end())
+
 
 
 def get_name(inputs):
@@ -51,10 +43,15 @@ def last_name(inputs):
 def dates(inputs):
     dats = []
     regex_statement = r"[0-9][0-9]\s[a-z][a-z][a-z]\,\s[0-9][0-9][0-9][0-9]|[0-9][0-9]\s[a-z][a-z][a-z]\.\s[0-9][0-9][0-9][0-9]"
+    pattern = re.compile(regex_statement)
     for i in inputs:
-        for m in re.finditer(regex_statement,i):
-            # print(m.start(), m.end())
-            dats.append(i[int(m.start()): int(m.end())+1].replace(",","").replace(".",""))
+        for match in re.findall(pattern, i):
+            dats.append(match)
+    return dats
+    # for i in inputs:
+    #     for m in re.finditer(regex_statement,i):
+    #         # print(m.start(), m.end())
+    #         dats.append(i[int(m.start()): int(m.end())+1].replace(",","").replace(".",""))
 
 
 def process_image(image_data, binary_conversion):
