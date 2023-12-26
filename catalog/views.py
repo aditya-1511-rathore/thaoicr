@@ -44,7 +44,7 @@ def home(request):
                     )
                 return render(request,"item.html",context={"data":data, "new":True})
             else:
-                return redirect(f"/previous?id={OCRResult.objects.get(id_number = id).id_number}&exist=True")
+                return redirect(f"/previous?id={OCRResult.objects.get(id_number = id).id}&exist=True")
     return render(request, "home.html", {"form":OCRForm()})
 
 # function to view all the previous scans
