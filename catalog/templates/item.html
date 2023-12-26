@@ -107,7 +107,7 @@
         </style>
 </head>
 <body>
-    <form method = 'post' class="container" {%if new%}action = "/previous?id={{data.id_number}}"{%endif%}>
+    <form method = 'post' class="container" {%if new%}action = "/previous?id={{data.id}}"{%endif%}>
         {%csrf_token%}
         {%if exist%}
         <h1>Id {{data.id_number}} Already Exists</h1>
