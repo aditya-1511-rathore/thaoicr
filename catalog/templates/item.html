@@ -115,6 +115,7 @@
         <h1>Details for ID {{data.id_number}}</h1>
         {%endif%}
         <p>(created at {{data.created_at}})</p>
+        <input type="text" name="id" value="{{data.id}}" style="display:none">
         <p>Status- {%if data.success == True%}Completed{%else%}Incomplete{%endif%}</p>
         <div class="back" onclick="window.location.href='/'">←</div>
         <div class="item">
