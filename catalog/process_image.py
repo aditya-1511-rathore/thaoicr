@@ -69,6 +69,7 @@ def process_image(image_data, binary_conversion):
     
     # result = reader.readtext(image_path, detail = 0)
     ocr_text = ocr_core(image_path).lower().split("\n")
+    print(ocr_text)
     # res = " ".join(result).replace(".","").replace(",","").replace(":","")
     # print(res)
     try:
