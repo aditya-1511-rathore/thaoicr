@@ -21,11 +21,14 @@ def get_id(inputs):
     id = None
     for i in inputs:
         x = re.search(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]", i)
-        print(x)
+        # print(x)
+        match = re.match(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]",i)
+        if match is not none:
+            print(match.group())
         if x is not None:
             id = x.group()
-        for m in re.finditer(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]",i):
-            print(m.start(), m.end())
+        # for m in re.finditer(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]",i):
+        #     print(m.start(), m.end())
 
 
 def get_name(inputs):
