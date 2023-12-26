@@ -42,7 +42,7 @@ def last_name(inputs):
 
 def dates(inputs):
     dats = []
-    regex_statement = r"[0-9][0-9]\s[a-z][a-z][a-z]\,\s[0-9][0-9][0-9][0-9]|[0-9][0-9]\s[a-z][a-z][a-z]\.\s[0-9][0-9][0-9][0-9]"
+    regex_statement = r"[0-9][0-9]\s[a-z][a-z][a-z]\,\s[0-9][0-9][0-9][0-9]|[0-9][0-9]\s[a-z][a-z][a-z]\.\s[0-9][0-9][0-9][0-9]|[0-9]\s[a-z][a-z][a-z]\,\s[0-9][0-9][0-9][0-9]|[0-9]\s[a-z][a-z][a-z]\.\s[0-9][0-9][0-9][0-9]"
     pattern = re.compile(regex_statement)
     for i in inputs:
         for match in re.findall(pattern, i):
