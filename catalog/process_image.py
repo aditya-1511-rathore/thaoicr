@@ -23,7 +23,7 @@ def get_id(inputs):
         x = re.search(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]", i)
         # print(x)
         match = re.match(r"[0-9]\s[0-9][0-9][0-9][0-9]\s[0-9][0-9][0-9][0-9][0-9]\s[0-9][0-9]\s[0-9]",i)
-        if match is not none:
+        if match is not None:
             print(match.group())
         if x is not None:
             id = x.group()
