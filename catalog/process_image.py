@@ -103,7 +103,7 @@ def process_image(image_data, binary_conversion):
         'id': id_number,
         'name': name,
         'last_name': last_name_value,
-        'date-of-birth' : new_dats[0],
+        'date-of-birth' : dats[0],
         'date-of-issue': dats[1],
         'date-of-expiry': dats[2],
         "status":status
