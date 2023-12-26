@@ -63,8 +63,8 @@ def process_image(image_data, binary_conversion):
     
     # result = reader.readtext(image_path, detail = 0)
     ocr_text = ocr_core(image_path).lower().split("\n")
-    res = " ".join(result).replace(".","").replace(",","").replace(":","")
-    print(res)
+    # res = " ".join(result).replace(".","").replace(",","").replace(":","")
+    # print(res)
     try:
         id_number = get_id(ocr_text)
     except:
